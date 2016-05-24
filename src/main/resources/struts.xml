@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
+	<constant name="struts.multipart.maxSize" value="10701096" />
+	<!-- 解决乱码 -->
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+
+	<package name="ss2m-default" extends="struts-default">
+
+	</package>
+	
+	<!-- 访问url为工程名/namespae/action的name -->
+	<package name="ss2mTest" namespace="/test" extends="ss2m-default">
+		<action name="test" class="struts.TestAction" method="execute">
+			<result name="success">/test.jsp</result>
+		</action>
+	</package>
+
+</struts>
