@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ss2m.dao.UserDao">
+	<insert id="insert" parameterType="com.ss2m.vo.UserVo">
+		insert into user (
+		<if test="userid != null">   
+			userid,
+		</if>
+		<if test="client_no != null">   
+			client_no,
+		</if>
+		<if test="acct_no != null">   
+			acct_no,
+		</if>
+		<if test="client_name != null">   
+			client_name,
+		</if>
+		<if test="last_acc_bal != null">   
+			last_acc_bal,
+		</if>
+		<if test="account_balance != null">   
+			account_balance,
+		</if>
+		<if test="keep_balance != null">   
+			keep_balance,
+		</if>
+		<if test="block_balance != null">   
+			block_balance,
+		</if>
+		<if test="control_balance != null">   
+			control_balance,
+		</if>
+		<if test="usable_money != null">   
+			usable_money,
+		</if>
+		<if test="overdraft_balan != null">   
+			overdraft_balan,
+		</if>
+		<if test="busi_date != null">   
+			busi_date,
+		</if>
+		<if test="corp_code != null">   
+			corp_code,
+		</if>
+		<if test="sys_id != null">   
+			sys_id,
+		</if>
+		<if test="user_id != null">   
+			user_id,
+		</if>
+		<if test="remark != null">   
+			remark,
+		</if>
+		<if test="remark_info != null">   
+			remark_info,
+		</if>
+		<if test="spare_num1 != null">   
+			spare_num1,
+		</if>
+		<if test="spare_num2 != null">   
+			spare_num2,
+		</if>
+		<if test="spare_flag1 != null">   
+			spare_flag1,
+		</if>
+		<if test="spare_flag2 != null">   
+			spare_flag2,
+		</if>
+		<if test="spare_info1 != null">   
+			spare_info1,
+		</if>
+		<if test="spare_info2 != null">   
+			spare_info2,
+		</if>
+		<if test="maintain_staf != null">   
+			maintain_staf,
+		</if>
+		<if test="maintain_organ != null">   
+			maintain_organ,
+		</if>
+		<if test="maintain_date != null">   
+			maintain_date,
+		</if>
+		<if test="maintain_time != null">   
+			maintain_time,
+		</if>
+		<if test="time_stamp != null">   
+			time_stamp,
+		</if>
+		<if test="record_status != null">   
+			record_status,
+		</if>
+			acc_bal_id
+		)values(
+			<if test="busi_no != null">  
+				#{busi_no},
+			</if>
+			<if test="client_no != null">  
+				#{client_no},
+			</if>
+			<if test="acct_no != null">  
+				#{acct_no},
+			</if>
+			<if test="client_name != null">  
+				#{client_name},
+			</if>
+			<if test="last_acc_bal != null">  
+				#{last_acc_bal},
+			</if>
+			<if test="account_balance != null">  
+				#{account_balance},
+			</if>
+			<if test="keep_balance != null">  
+				#{keep_balance},
+			</if>
+			<if test="block_balance != null">  
+				#{block_balance},
+			</if>
+			<if test="control_balance != null">  
+				#{control_balance},
+			</if>
+			<if test="usable_money != null">  
+				#{usable_money},
+			</if>
+			<if test="overdraft_balan != null">  
+				#{overdraft_balan},
+			</if>
+			<if test="busi_date != null">  
+				#{busi_date},
+			</if>
+			<if test="corp_code != null">  
+				#{corp_code},
+			</if>
+			<if test="sys_id != null">  
+				#{sys_id},
+			</if>
+			<if test="user_id != null">  
+				#{user_id},
+			</if>
+			<if test="remark != null">  
+				#{remark},
+			</if>
+			<if test="remark_info != null">  
+				#{remark_info},
+			</if>
+			<if test="spare_num1 != null">  
+				#{spare_num1},
+			</if>
+			<if test="spare_num2 != null">  
+				#{spare_num2},
+			</if>
+			<if test="spare_flag1 != null">  
+				#{spare_flag1},
+			</if>
+			<if test="spare_flag2 != null">  
+				#{spare_flag2},
+			</if>
+			<if test="spare_info1 != null">  
+				#{spare_info1},
+			</if>
+			<if test="spare_info2 != null">  
+				#{spare_info2},
+			</if>
+			<if test="maintain_staf != null">  
+				#{maintain_staf},
+			</if>
+			<if test="maintain_organ != null">  
+				#{maintain_organ},
+			</if>
+			<if test="maintain_date != null">  
+				#{maintain_date},
+			</if>
+			<if test="maintain_time != null">  
+				#{maintain_time},
+			</if>
+			<if test="time_stamp != null">  
+				#{time_stamp},
+			</if>
+			<if test="record_status != null">  
+				#{record_status},
+			</if>
+				SEQ_ACCOUNT_BALANCE.nextVal
+		)
+	</insert>
+	
+	<update id="update" parameterType="com.spdb.stas.beans.AccountBalanceVo">
+		update st_account_balance_info
+		<set>
+			<if test="busi_no != null">  
+				busi_no=#{busi_no},
+			</if>
+			<if test="client_no != null">  
+				client_no=#{client_no},
+			</if>
+			<if test="acct_no != null">  
+				acct_no=#{acct_no},
+			</if>
+			<if test="client_name != null">  
+				client_name=#{client_name},
+			</if>
+			<if test="last_acc_bal != null">  
+				last_acc_bal=#{last_acc_bal},
+			</if>
+			<if test="account_balance != null">  
+				account_balance=#{account_balance},
+			</if>
+			<if test="keep_balance != null">  
+				keep_balance=#{keep_balance},
+			</if>
+			<if test="block_balance != null">  
+				block_balance=#{block_balance},
+			</if>
+			<if test="control_balance != null">  
+				control_balance=#{control_balance},
+			</if>
+			<if test="usable_money != null">  
+				usable_money=#{usable_money},
+			</if>
+			<if test="overdraft_balan != null">  
+				overdraft_balan=#{overdraft_balan},
+			</if>
+			<if test="busi_date != null">  
+				busi_date=#{busi_date},
+			</if>
+			<if test="corp_code != null">  
+				corp_code=#{corp_code},
+			</if>
+			<if test="sys_id != null">  
+				sys_id=#{sys_id},
+			</if>
+			<if test="user_id != null">  
+				user_id=#{user_id},
+			</if>
+			<if test="remark != null">  
+				remark=#{remark},
+			</if>
+			<if test="remark_info != null">  
+				remark_info=#{remark_info},
+			</if>
+			<if test="spare_num1 != null">  
+				spare_num1=#{spare_num1},
+			</if>
+			<if test="spare_num2 != null">  
+				spare_num2=#{spare_num2},
+			</if>
+			<if test="spare_flag1 != null">  
+				spare_flag1=#{spare_flag1},
+			</if>
+			<if test="spare_flag2 != null">  
+				spare_flag2=#{spare_flag2},
+			</if>
+			<if test="spare_info1 != null">  
+				spare_info1=#{spare_info1},
+			</if>
+			<if test="spare_info2 != null">  
+				spare_info2=#{spare_info2},
+			</if>
+			<if test="maintain_staf != null">  
+				maintain_staf=#{maintain_staf},
+			</if>
+			<if test="maintain_organ != null">  
+				maintain_organ=#{maintain_organ},
+			</if>
+			<if test="maintain_date != null">  
+				maintain_date=#{maintain_date},
+			</if>
+			<if test="maintain_time != null">  
+				maintain_time=#{maintain_time},
+			</if>
+			<if test="time_stamp != null">  
+				time_stamp=#{time_stamp},
+			</if>
+			<if test="record_status != null">  
+				record_status=#{record_status},
+			</if>
+		</set>
+		where busi_no=#{busi_no}
+	</update>
+</mapper>

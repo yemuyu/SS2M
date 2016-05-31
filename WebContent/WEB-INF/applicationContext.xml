@@ -13,5 +13,47 @@
 		
 	<!--测试  -->
 	<import resource="classpath*:appCtx-test.xml" />
-		
+
+	<!-- 
+	<jee:jndi-lookup id="dataSource" jndi-name="jdbc/stas" />
+	 -->
+	<!--
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
+		<property name="url" value="jdbc:oracle:thin:@10.129.2.114:1521:STASDB"></property>
+		<property name="username" value="stas"></property>
+		<property name="password" value="stas"></property>
+		<property name="maxActive" value="30"></property>
+		<property name="maxIdle" value="10"></property>
+		<property name="maxWait" value="500"></property>
+		<property name="defaultAutoCommit" value="true"></property>
+		<property name="logAbandoned" value="true"></property>
+		<property name="removeAbandoned" value="true"></property>
+		<property name="removeAbandonedTimeout" value="120"></property>
+		<property name="validationQuery" value="select sysdate from dual"></property>
+	</bean>
+	-->
+	
+	<!-- datasource -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+		<property name="driverClass" >
+		<value>com.mysql.jdbc.Driver</value>
+		</property>
+		<property name="jdbcUrl">
+		<value>jdbc:mysql://localhost:3309/ss2m</value>
+		</property>
+		<property name="user" >
+		<value>ss2m</value>
+		</property>
+		<property name="password" >
+		<value>ss2m</value>
+		</property>
+	</bean>
+	
+	<!-- mybatis的sqlsessionFactory -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="classpath:mybatis-config.xml" />
+		<property name="mapperLocations" value="classpath*:database/**/*.mybatis.xml" />
+	</bean>
 </beans>
