@@ -2,7 +2,7 @@ package com.ss2m.dao;
 
 import java.util.List;
 
-import com.ss2m.vo.UserVo;
+import com.ss2m.bean.UserVo;
 
 public interface UserDao {
 
