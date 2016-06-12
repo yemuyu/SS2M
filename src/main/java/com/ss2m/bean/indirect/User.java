@@ -5,13 +5,11 @@ import java.util.Date;
 
 public class User {
 
-	// private String role_id;//角色标识号
-	// private String role_name;
 	private String user_id;// 用户标识号
 	private String user_loginname;// 登录名（登录名保证在同一系统下无重复）
 	private String user_username;// 用户名
-	private String organ_id;
-	private String organ_name;
+	private String organ_id;//机构id
+	private String organ_name;//机构名
 	private String user_password;// 登陆密码
 	private String user_status;// 用户状态̬
 	private String last_login_time;// 最后登陆时间
@@ -27,21 +25,6 @@ public class User {
 	private int fail_cnt; //密码失次数
 	private String pwd_time;//密码过期日期
 
-	// public String getRole_id() {
-	// return role_id;
-	// }
-	//
-	// public void setRole_id(String role_id) {
-	// this.role_id = role_id;
-	// }
-	//
-	// public String getRole_name() {
-	// return role_name;
-	// }
-	//
-	// public void setRole_name(String role_name) {
-	// this.role_name = role_name;
-	// }
 
 	public String getUser_displayTime() {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
